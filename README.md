@@ -11,7 +11,7 @@ rækker på en lottokupon må være identiske.
 WPF programmet, benyttes til at generere 1-10 tilfældige lottokuponer. Datoen som ses på lottokuponen, er den dato lottokuponen er genereret.
 
 De generede lottokuponer udskrives på disken som tekst-filer og placeres i directory d:\lotto_kuponer 
-og lottokuponerne navngives henholdsvis kupon1.txt, lottokupon2.txt, lottokupon3.txt, ……, lottokupon10.txt
+og lottokuponerne navngives henholdsvis kupon1.txt, kupon2.txt, kupon3.txt, ……, kupon10.txt
 
 Som bruger af systemet er det muligt at vælge det ønskede antal lottokuponer (1-10) og om lottokupon skal være med eller uden joker.
 
