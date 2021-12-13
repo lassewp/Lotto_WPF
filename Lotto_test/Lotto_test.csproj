@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="back.png" />
+    <Resource Include="background.png" />
+    <Resource Include="Danske-Spil-logo.png" />
+    <Resource Include="icon.png" />
+    <Resource Include="my-coupons.png" />
+    <Resource Include="my-coupons_mypages.png" />
+    <Resource Include="pdf-file.png" />
+    <Resource Include="reset.png" />
+    <Resource Include="txt-file.png" />
+    <Resource Include="txt.png" />
+  </ItemGroup>
+
+</Project>
