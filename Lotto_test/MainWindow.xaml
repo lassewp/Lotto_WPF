@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lotto_test"
         mc:Ignorable="d"
-        Title="Danske Spil - Lotto" Height="450" Width="325" Icon="/icon.png" ResizeMode="NoResize">
+        Title="Danske Spil - Lotto" Height="532" Width="325" Icon="/icon.png" ResizeMode="NoResize">
     <Grid Margin="0,0,0,-6">
         <Image Height="100" Margin="11,-16,11,0" VerticalAlignment="Top" Source="/Danske-Spil-logo.png" Stretch="UniformToFill"/>
         <Separator Margin="13,69,13,0" VerticalAlignment="Top" Height="15"/>
@@ -30,6 +30,7 @@
                 <ImageBrush Stretch="Uniform" ImageSource="/reset.png"/>
             </Button.Background>
         </Button>
+        <Separator Margin="13,404,13,0" Height="15" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

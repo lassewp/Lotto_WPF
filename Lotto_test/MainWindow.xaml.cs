@@ -14,6 +14,7 @@ namespace Lotto_test
         {
             InitializeComponent();
             proBar.IsEnabled = false;
+            LottoWinnerNumbers lottoWinnerNumbers = new LottoWinnerNumbers();
         }
 
         private void Print_Button_Click(object sender, RoutedEventArgs e)

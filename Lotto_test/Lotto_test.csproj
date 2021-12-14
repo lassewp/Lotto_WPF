@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="topbar.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.39" />
     <PackageReference Include="PdfSharp" Version="1.50.5147" />
     <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
@@ -22,6 +27,7 @@
     <Resource Include="my-coupons_mypages.png" />
     <Resource Include="pdf-file.png" />
     <Resource Include="reset.png" />
+    <Resource Include="topbar.png" />
     <Resource Include="txt-file.png" />
     <Resource Include="txt.png" />
   </ItemGroup>
