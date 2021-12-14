@@ -42,6 +42,7 @@ namespace Lotto_test
             HtmlDocument document2 = webPage2.Load("https://danskespil.dk/lotto");
             HtmlNode[] nodes2 = document2.DocumentNode.SelectNodes("//head").Where(x => x.InnerHtml.Contains("Spil")).ToArray();
             string amountTmp = nodes2[0].InnerText.Remove(0, 16).Substring(0, nodes2[0].InnerText.Remove(0, 16).IndexOf("kr"));
+            this.WinAmount = amountTmp;
         }
     }
 }

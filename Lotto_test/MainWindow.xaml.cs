@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace Lotto_test
 {
@@ -14,7 +16,7 @@ namespace Lotto_test
         {
             InitializeComponent();
             proBar.IsEnabled = false;
-            LottoWinnerNumbers lottoWinnerNumbers = new LottoWinnerNumbers();
+            
         }
 
         private void Print_Button_Click(object sender, RoutedEventArgs e)
@@ -57,19 +59,9 @@ namespace Lotto_test
             coupons.Clear();
             proBar.Value = 100;
             doneLabel.Content = "Færdig";
-            showCouponButton.IsEnabled = true;
+            myCoupons.IsEnabled = true;
         }
 
-        private void showCouponButton_Click(object sender, RoutedEventArgs e)
-        {
-            CouponViewer viewerWindow = new CouponViewer(pathForCoupons);
-            viewerWindow.couponListbox.Items.Refresh();
-            if (viewerWindow.couponListbox.Items.IndexOf(0).ToString() == "")
-            {
-                viewerWindow.couponListbox.Items.Remove(0);
-            }
-            viewerWindow.Show();
-        }
 
         private void resetButton_Click(object sender, RoutedEventArgs e)
         {
@@ -81,6 +73,34 @@ namespace Lotto_test
             jokerJa.IsEnabled = true;
             jokerNej.IsEnabled = true;
             jokerNej.IsChecked = true;
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void myCoupons_Click(object sender, RoutedEventArgs e)
+        {
+            CouponViewer viewerWindow = new CouponViewer(pathForCoupons);
+            viewerWindow.couponListbox.Items.Refresh();
+            if (viewerWindow.couponListbox.Items.IndexOf(0).ToString() == "")
+            {
+                viewerWindow.couponListbox.Items.Remove(0);
+            }
+            viewerWindow.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LottoWinnerNumbers lottoWinnerNumbers = new LottoWinnerNumbers();
+            tbmarquee.Text = "1. PRÆMIEPULJEN LØRDAG: " + lottoWinnerNumbers.WinAmount + "KR." + "                                        " + "SENESTE VINDERTAL: " + lottoWinnerNumbers.WinNum;
+            DoubleAnimation doubleAnimation = new DoubleAnimation();
+            doubleAnimation.From = -tbmarquee.ActualWidth;
+            doubleAnimation.To = canMain.ActualWidth;
+            doubleAnimation.RepeatBehavior = RepeatBehavior.Forever;
+            doubleAnimation.Duration = new Duration(TimeSpan.Parse("0:0:10"));
+            tbmarquee.BeginAnimation(Canvas.RightProperty, doubleAnimation);
         }
     }
 } 

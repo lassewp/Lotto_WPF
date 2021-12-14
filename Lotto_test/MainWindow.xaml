@@ -5,32 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lotto_test"
         mc:Ignorable="d"
-        Title="Danske Spil - Lotto" Height="532" Width="325" Icon="/icon.png" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,-6">
-        <Image Height="100" Margin="11,-16,11,0" VerticalAlignment="Top" Source="/Danske-Spil-logo.png" Stretch="UniformToFill"/>
-        <Separator Margin="13,69,13,0" VerticalAlignment="Top" Height="15"/>
-        <Label Content="Antal kuponer:" HorizontalAlignment="Left" Margin="12,89,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="kuponSlider" Margin="16,120,13,0" VerticalAlignment="Top" TickPlacement="BottomRight" SmallChange="1" AutoToolTipPlacement="TopLeft" Minimum="1" IsSnapToTickEnabled="True"/>
-        <Label Content="Joker tal:" HorizontalAlignment="Left" Margin="12,159,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="jokerJa" Content="Ja, tilføj joker tal" HorizontalAlignment="Left" Margin="16,190,0,0" VerticalAlignment="Top" Width="108"/>
-        <RadioButton x:Name="jokerNej" Content="Nej, tilføj ikke joker tal" Margin="155,190,0,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" Width="139"/>
-        <Separator Margin="13,219,13,0" Height="15" VerticalAlignment="Top"/>
-        <Button x:Name="printButton" Content="Opret kupon(er)" Margin="12,239,13,0" Height="40" VerticalAlignment="Top" Click="Print_Button_Click"/>
-        <Label Content="{Binding ElementName=kuponSlider, Path=Value}" HorizontalAlignment="Left" Margin="100,89,0,0" VerticalAlignment="Top" Width="32"/>
-        <ProgressBar x:Name="proBar" Height="25" Margin="12,293,13,0" VerticalAlignment="Top"/>
-        <Label x:Name="doneLabel" Content="" HorizontalAlignment="Center" Margin="0,292,0,0" VerticalAlignment="Top" Width="49" FontWeight="Bold" Foreground="White"/>
-        <Separator Margin="13,324,13,0" Height="15" VerticalAlignment="Top"/>
-        <Button x:Name="showCouponButton" Content="Vis kupon(er)" Margin="13,344,161,0" Height="48" VerticalAlignment="Top" Click="showCouponButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/my-coupons.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="resetButton" Content="" Margin="0,344,13,0" VerticalAlignment="Top" Height="48" HorizontalAlignment="Right" Width="62" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="resetButton_Click">
+        Title="Danske Spil - Lotto" Height="670" Width="1200" Icon="/icon.png" ResizeMode="NoResize" Loaded="Window_Loaded" Background="#FFBB0005">
+    <Grid Margin="0,0,0,0">
+        <Image Height="145" Margin="0,279,0,0" VerticalAlignment="Top" Source="/jokerv2.png"/>
+
+        <Image Height="145" Margin="0,135,1,0" VerticalAlignment="Top" Source="/couponMenuv2.png"/>
+
+        <Image Height="100" Margin="0,0,0,0" VerticalAlignment="Top" Source="/topbar.png" Stretch="UniformToFill"/>
+        <Label Content="Antal kupon(er):" HorizontalAlignment="Left" Margin="1053,201,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <RadioButton x:Name="jokerJa" Content="Ja, tilføj joker tal til kuponer" HorizontalAlignment="Left" Margin="40,379,0,0" VerticalAlignment="Top" Width="429" Height="28" FontSize="20" FontWeight="Bold"/>
+        <RadioButton x:Name="jokerNej" Content="Nej, tilføj ikke joker tal til kuponer" Margin="729,378,0,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" Width="433" Height="29" FontSize="20" FontWeight="Bold"/>
+        <Separator Margin="13,429,13,0" Height="15" VerticalAlignment="Top"/>
+        <Button x:Name="printButton" Content="Opret kupon(er)" Margin="13,462,13,0" Height="40" VerticalAlignment="Top" Click="Print_Button_Click"/>
+        <Label Content="{Binding Value, ElementName=kuponSlider}" HorizontalAlignment="Left" Margin="1146,201,0,0" VerticalAlignment="Top" Width="32" Foreground="White"/>
+        <ProgressBar x:Name="proBar" Height="26" Margin="13,514,13,0" VerticalAlignment="Top"/>
+        <Label x:Name="doneLabel" Content="" HorizontalAlignment="Left" Margin="571,648,0,0" VerticalAlignment="Top" Width="48" FontWeight="Bold" Foreground="White"/>
+        <Separator Margin="13,552,13,0" Height="15" VerticalAlignment="Top"/>
+        <Button x:Name="resetButton" Content="" Margin="0,572,16,0" VerticalAlignment="Top" Height="48" HorizontalAlignment="Right" Width="62" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="resetButton_Click">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="/reset.png"/>
             </Button.Background>
         </Button>
-        <Separator Margin="13,404,13,0" Height="15" VerticalAlignment="Top"/>
+        <Separator Margin="13,625,13,0" Height="15" VerticalAlignment="Top"/>
+        <Button x:Name="myCoupons" Content="Opret kupon(er)" Margin="776,30,0,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="201" Click="myCoupons_Click" Foreground="{x:Null}" BorderBrush="White" Background="{x:Null}"/>
+        <Button x:Name="exit" Content="Button" HorizontalAlignment="Left" Height="40" Margin="1050,30,0,0" VerticalAlignment="Top" Width="98" Click="exit_Click" Background="{x:Null}" BorderBrush="White" Foreground="{x:Null}"/>
+        <Canvas Background="White" Margin="0,100,0,0" Height="35" VerticalAlignment="Top" >
+            <Canvas Margin="0" ClipToBounds="True" x:Name="canMain" Background="#950002"   Height="34" Width="1200"  >
+                <TextBlock Margin="0,3,0,0" FontSize="20" x:Name="tbmarquee" Foreground="White" FontWeight="Bold" Text="1. PRÆMIEPULJEN LØRDAG: 00.000.000 KR.                                        SENESTE VINDERTAL: 00 00 00 00 00 00 00"/>
+            </Canvas>
+        </Canvas>
+        <Slider x:Name="kuponSlider" Margin="36,237,34,0" VerticalAlignment="Top" TickPlacement="BottomRight" SmallChange="1" AutoToolTipPlacement="TopLeft" Minimum="1" IsSnapToTickEnabled="True"/>
 
     </Grid>
 </Window>
