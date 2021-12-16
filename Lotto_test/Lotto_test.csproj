@@ -13,6 +13,7 @@
     <None Remove="joker.png" />
     <None Remove="jokerv2.png" />
     <None Remove="topbar.png" />
+    <None Remove="viewBg.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,7 @@
     <Resource Include="topbar.png" />
     <Resource Include="txt-file.png" />
     <Resource Include="txt.png" />
+    <Resource Include="viewBg.png" />
   </ItemGroup>
 
 </Project>
