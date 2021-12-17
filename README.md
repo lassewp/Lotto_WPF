@@ -17,3 +17,5 @@ Som bruger af systemet er det muligt at vælge det ønskede antal lottokuponer (
 
 Mulighed for at se de nye kuponer på skærmen og udskrive som PDF og TXT.
 
+![Alt Text](https://i.imgur.com/OAnDN0w.gif)
+
