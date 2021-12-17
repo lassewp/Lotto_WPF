@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lotto_test
 {
+    // GET RECENT WINNING NUMBERS AND PRIZE SIZE
     class LottoWinnerNumbers
     {
         public string WinNum;
@@ -16,9 +17,9 @@ namespace Lotto_test
             HtmlWeb webPage = new HtmlWeb();
             HtmlDocument document = webPage.Load("https://www.lottostat.dk/all.lottotal");
             HtmlNode[] nodes = document.DocumentNode.SelectNodes("//tr").Where(x => x.InnerHtml.Contains("red_ball")).ToArray();
-         
+
             string tmp = nodes[0].InnerText;
-            tmp = tmp.Replace("\t","");
+            tmp = tmp.Replace("\t", "");
             tmp = tmp.Replace("\n", "");
 
             List<string> tmpNumbers = new List<string>();

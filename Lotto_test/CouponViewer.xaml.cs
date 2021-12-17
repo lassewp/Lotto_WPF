@@ -69,7 +69,7 @@ namespace Lotto_test
         {
             var createPdf = new CouponPDF(Path);
             createPdf.AddCoupons();
-            createPdf.OpenPDF();
+            Process.Start("explorer.exe", Path);
         }
     }
 
