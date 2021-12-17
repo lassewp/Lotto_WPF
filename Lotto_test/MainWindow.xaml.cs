@@ -22,6 +22,7 @@ namespace Lotto_test
         private void Print_Button_Click(object sender, RoutedEventArgs e)
         {
             printButton.IsEnabled = false;
+            printButton.Visibility = Visibility.Hidden;
             doneLabel.Content = "";
             proBar.IsEnabled = true;
             jokerJa.IsEnabled = false;
@@ -66,6 +67,7 @@ namespace Lotto_test
         private void resetButton_Click(object sender, RoutedEventArgs e)
         {
             printButton.IsEnabled = true;
+            printButton.Visibility = Visibility.Visible;
             proBar.Value = 0;
             doneLabel.Content = "";
             kuponSlider.IsEnabled = true;

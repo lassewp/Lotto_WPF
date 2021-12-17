@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="buttom_bg.png" />
     <None Remove="couponMenu.png" />
     <None Remove="couponMenuv2.png" />
     <None Remove="joker.png" />
@@ -26,6 +27,7 @@
   <ItemGroup>
     <Resource Include="back.png" />
     <Resource Include="background.png" />
+    <Resource Include="buttom_bg.png" />
     <Resource Include="couponMenu.png" />
     <Resource Include="couponMenuv2.png" />
     <Resource Include="Danske-Spil-logo.png" />

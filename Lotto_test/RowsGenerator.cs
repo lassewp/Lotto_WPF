@@ -6,7 +6,7 @@ namespace Lotto_test
     public class RowsGenerator
     {
         public int Rows = 10; // number of rows to generate (fixed for this assignment)
-        public int NumOnRow = 7; // number of rows to generate (fixed for this assignment)
+        public int NumOnRow = 7; // number of numbers for each rows to generate (fixed for this assignment)
         private int JokerRows = 2; // number of rows to generate (fixed for this assignment)
         private int JokerNumOnRow = 7; // number of rows to generate (fixed for this assignment)
 
@@ -20,10 +20,10 @@ namespace Lotto_test
             int tmp; // tmp int to store random generated number and compare to our used numbers list
             for (int i = 0; i < NumOnRow; i++) // find x (NumOnRow) amount of numbers on a single row
             {
-                tmp = random.Next(1, 36); // find a new random number
+                tmp = random.Next(1, 37); // find a new random number
                 while (tmpNumList.Contains(tmp) == true) // generate a new number, untill a number not used is found
                 {
-                    tmp = random.Next(1, 36); // find new random number
+                    tmp = random.Next(1, 37); // find new random number
                 }
                 if (tmpNumList.Contains(tmp) != true) // add the number to array and list if not used
                 {
@@ -65,7 +65,7 @@ namespace Lotto_test
             int tmp;
             for (int i = 0; i < JokerNumOnRow; i++) // find x (JokerNumOnRow) amount of numbers on a single row
             {
-                tmp = random2.Next(1, 9);
+                tmp = random2.Next(1, 10);
                 jokerCouponRow[i] = tmp;
             }
             return jokerCouponRow; // return our filled row int array
